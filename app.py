@@ -57,3 +57,8 @@ async def chat(request: ChatRequest):
     response = chatbot_response(request.message)
     return {"response": response}
 
+#specific port
+if name == "main":
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
