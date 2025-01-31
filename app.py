@@ -58,7 +58,7 @@ async def chat(request: ChatRequest):
     return {"response": response}
 
 #specific port
-if name == "main":
+if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
     uvicorn.run(app, host="0.0.0.0", port=port)
 
